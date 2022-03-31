@@ -23,15 +23,12 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProjects));
 			this.toolStripContainerProjects = new System.Windows.Forms.ToolStripContainer();
 			this.listViewProjects = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.toolStripProjects = new System.Windows.Forms.ToolStrip();
-			this.buttonOpen = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.buttonNew = new System.Windows.Forms.ToolStripButton();
 			this.buttonEdit = new System.Windows.Forms.ToolStripButton();
 			this.buttonDelete = new System.Windows.Forms.ToolStripButton();
@@ -105,8 +102,6 @@
 			this.toolStripProjects.Dock = System.Windows.Forms.DockStyle.None;
 			this.toolStripProjects.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStripProjects.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buttonOpen,
-            this.toolStripSeparator1,
             this.buttonNew,
             this.buttonEdit,
             this.buttonDelete,
@@ -117,20 +112,6 @@
 			this.toolStripProjects.Size = new System.Drawing.Size(1017, 25);
 			this.toolStripProjects.Stretch = true;
 			this.toolStripProjects.TabIndex = 0;
-			// 
-			// buttonOpen
-			// 
-			this.buttonOpen.Image = global::APIMagic.Properties.Resources.abrir_16x16;
-			this.buttonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.buttonOpen.Name = "buttonOpen";
-			this.buttonOpen.Size = new System.Drawing.Size(96, 22);
-			this.buttonOpen.Text = "Open project";
-			this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
 			// buttonNew
 			// 
@@ -166,7 +147,7 @@
 			// 
 			// buttonReload
 			// 
-			this.buttonReload.Image = ((System.Drawing.Image)(resources.GetObject("buttonReload.Image")));
+			this.buttonReload.Image = global::APIMagic.Properties.Resources.refresh_16x16;
 			this.buttonReload.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.buttonReload.Name = "buttonReload";
 			this.buttonReload.Size = new System.Drawing.Size(63, 22);
@@ -185,7 +166,6 @@
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Open Project";
-			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProjectSelect_FormClosed);
 			this.Shown += new System.EventHandler(this.FormProjectSelect_Shown);
 			this.toolStripContainerProjects.ContentPanel.ResumeLayout(false);
 			this.toolStripContainerProjects.TopToolStripPanel.ResumeLayout(false);
@@ -206,8 +186,6 @@
 		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.ColumnHeader columnHeader3;
 		private System.Windows.Forms.ToolStrip toolStripProjects;
-		private System.Windows.Forms.ToolStripButton buttonOpen;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripButton buttonReload;
 		private System.Windows.Forms.ToolStripButton buttonNew;
 		private System.Windows.Forms.ToolStripButton buttonEdit;

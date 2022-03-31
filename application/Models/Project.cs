@@ -5,13 +5,13 @@ using System.Collections.Generic;
 namespace APIMagic.Models {
 	public class Project {
 
-		public string					Path;
-		public string					Name;
-		public ProjectSettings			Settings;
-		public List<IProjectRoute>		Routes;
+		public string						Path;
+		public string						Name;
+		public ProjectSettings				Settings;
+		public List<ProjectRouteWithType>	Routes;
 
 		public Project() {
-			this.Routes = new List<IProjectRoute>();
+			this.Routes = new List<ProjectRouteWithType>();
 		}
 	}
 }

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using APIMagic.Constants;
-using System.Linq;
+﻿using APIMagic.Constants;
 
 
 namespace APIMagic.Models {
-	public class ProjectRouteFromURL : IProjectRoute {
+	public class ProjectRouteWithType : IProjectRoute {
+		public ProjectRouteType				RouteType		{ get; set; }
 		public string						Method			{ get; set; }
 		public ProjectRouteAddressType		AddressType		{ get; set; }
 		public string						Address			{ get; set; }

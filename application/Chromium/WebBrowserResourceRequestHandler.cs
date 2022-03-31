@@ -23,7 +23,7 @@ namespace APIMagic.Chromium {
 			string	urlRoute = request.Url.Substring(Shared.CurrentProject.Settings.ApiURL.Length);
 			bool	matching;
 
-			foreach(IProjectRoute route in Shared.CurrentProject.Routes) {
+			foreach(ProjectRouteWithType route in Shared.CurrentProject.Routes) {
 				if(string.Compare(request.Method, route.Method, StringComparison.OrdinalIgnoreCase) == 0) {
 					switch(route.AddressType) {
 						case ProjectRouteAddressType.Equals:

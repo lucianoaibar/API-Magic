@@ -3,7 +3,7 @@
 
 namespace APIMagic.Models {
 	public class ProjectSettings {
-		public string		URL;
-		public string		ApiURL;
+		public string		URL			{ get; set; }
+		public string		ApiURL		{ get; set; }
 	}
 }

@@ -69,32 +69,33 @@
 			// Menu_OpenProject
 			// 
 			this.Menu_OpenProject.Name = "Menu_OpenProject";
-			this.Menu_OpenProject.Size = new System.Drawing.Size(171, 22);
+			this.Menu_OpenProject.Size = new System.Drawing.Size(180, 22);
 			this.Menu_OpenProject.Text = "Open Project...";
 			this.Menu_OpenProject.Click += new System.EventHandler(this.Menu_OpenProject_Click);
 			// 
 			// Menu_ManageProjects
 			// 
 			this.Menu_ManageProjects.Name = "Menu_ManageProjects";
-			this.Menu_ManageProjects.Size = new System.Drawing.Size(171, 22);
+			this.Menu_ManageProjects.Size = new System.Drawing.Size(180, 22);
 			this.Menu_ManageProjects.Text = "Manage Projects...";
+			this.Menu_ManageProjects.Click += new System.EventHandler(this.Menu_ManageProjects_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
 			// 
 			// Menu_ProjectsReload
 			// 
 			this.Menu_ProjectsReload.Name = "Menu_ProjectsReload";
-			this.Menu_ProjectsReload.Size = new System.Drawing.Size(171, 22);
+			this.Menu_ProjectsReload.Size = new System.Drawing.Size(180, 22);
 			this.Menu_ProjectsReload.Text = "Reload";
 			this.Menu_ProjectsReload.Click += new System.EventHandler(this.Menu_ProjectsReload_Click);
 			// 
 			// Menu_Quit
 			// 
 			this.Menu_Quit.Name = "Menu_Quit";
-			this.Menu_Quit.Size = new System.Drawing.Size(171, 22);
+			this.Menu_Quit.Size = new System.Drawing.Size(180, 22);
 			this.Menu_Quit.Text = "Quit";
 			this.Menu_Quit.Click += new System.EventHandler(this.Menu_Quit_Click);
 			// 
@@ -149,7 +150,7 @@
 			// 
 			// buttonHome
 			// 
-			this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
+			this.buttonHome.Image = global::APIMagic.Properties.Resources.home_16x16;
 			this.buttonHome.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.buttonHome.Name = "buttonHome";
 			this.buttonHome.Size = new System.Drawing.Size(60, 22);
@@ -160,6 +161,7 @@
 			// 
 			this.toolStripTextBoxURL.BackColor = System.Drawing.Color.White;
 			this.toolStripTextBoxURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.toolStripTextBoxURL.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.toolStripTextBoxURL.ForeColor = System.Drawing.Color.Black;
 			this.toolStripTextBoxURL.Name = "toolStripTextBoxURL";
 			this.toolStripTextBoxURL.Size = new System.Drawing.Size(600, 25);

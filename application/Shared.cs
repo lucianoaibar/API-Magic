@@ -14,7 +14,7 @@ namespace APIMagic {
 
 		static Shared() {
 			ApplicationPath		= AppDomain.CurrentDomain.BaseDirectory;
-			ProjectsPath		= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "API-Magic");
+			ProjectsPath		= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "API Magic");
 			CurrentProject		= null;
 			MainForm			= null;
 		}

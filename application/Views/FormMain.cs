@@ -21,12 +21,14 @@ namespace APIMagic.Views {
 		public FormMain() {
 			InitializeComponent();
 			this.Icon = Properties.Resources.wine_48x48_32x32_16x16;
-			this.delegateOnAddressChange = new Action<string>(this.OnAddressChange);
+
 			this.chromiumWebBrowser = Chromium.WebBrowser.CreateChromiumWebBrowser(this.toolStripContainerMain.ContentPanel.Controls, () => {
-				FormProjects f = new FormProjects();
+				FormProjectSelect f = new FormProjectSelect();
 				f.Show(this);
 			});
-			chromiumWebBrowser.AddressChanged += ChromiumWebBrowser_AddressChanged;
+
+			this.delegateOnAddressChange = new Action<string>(this.OnAddressChange);
+			this.chromiumWebBrowser.AddressChanged += ChromiumWebBrowser_AddressChanged;
 		}
 
 		//_____________________________________________________________________
@@ -42,13 +44,19 @@ namespace APIMagic.Views {
 		//_____________________________________________________________________
 		public void LoadProject() {
 			if(Shared.CurrentProject!=null) {
-				CefSharp.Cef.ClearCrossOriginWhitelist();
-				CefSharp.Cef.AddCrossOriginWhitelistEntry("http://localhost:8080", "https", string.Empty, true);
-				this.chromiumWebBrowser.LoadUrl(Shared.CurrentProject.Settings.URL);
+				_ = CefSharp.Cef.ClearCrossOriginWhitelist();
+				_ = CefSharp.Cef.AddCrossOriginWhitelistEntry("http://localhost:8080", "https", string.Empty, true);
+				chromiumWebBrowser.LoadUrl(Shared.CurrentProject.Settings.URL);
 			}
 		}
 
 		private void Menu_OpenProject_Click(object sender, EventArgs e) {
+		}
+
+		private void Menu_ManageProjects_Click(object sender, EventArgs e) {
+			using(FormProjects f = new FormProjects()) {
+				f.ShowDialog(this);
+			}
 		}
 
 		private void Menu_Quit_Click(object sender, EventArgs e) {
@@ -75,5 +83,6 @@ namespace APIMagic.Views {
 		private void Menu_ProjectsReload_Click(object sender, EventArgs e) {
 
 		}
+
 	}
 }

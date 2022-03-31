@@ -12,10 +12,16 @@ using APIMagic.DAL;
 
 
 namespace APIMagic.Views {
-	public partial class FormProjects : Form {
+	public partial class FormProjectSelect : Form {
 
 		//_____________________________________________________________________
-		public FormProjects() {
+		private Project		selectedProject;
+
+		//_____________________________________________________________________
+		public FormProjectSelect() {
+			Shared.MainForm.Enabled = false;
+			this.selectedProject = null;
+
 			InitializeComponent();
 		}
 
@@ -45,35 +51,33 @@ namespace APIMagic.Views {
 		}
 
 		//_____________________________________________________________________
+		private void buttonOk_Click(object sender, EventArgs e) {
+			this.OpenSelectedProject();
+		}
+
+		//_____________________________________________________________________
 		private void listViewProjects_MouseDoubleClick(object sender, MouseEventArgs e) {
+			this.OpenSelectedProject();
 		}
 
 		//_____________________________________________________________________
-		private async void buttonReload_Click(object sender, EventArgs e) {
-			await this.LoadAll();
-		}
-
-		//_____________________________________________________________________
-		private void buttonNew_Click(object sender, EventArgs e) {
-			using(FormProjectSave f = new FormProjectSave()) {
-				f.ShowDialog(this);
-			}
-		}
-
-		//_____________________________________________________________________
-		private void buttonEdit_Click(object sender, EventArgs e) {
+		private void OpenSelectedProject() {
 			if(this.listViewProjects.SelectedItems.Count==1) {
-				Project project = (Project) this.listViewProjects.SelectedItems[0].Tag;
-				using(FormProjectSave f = new FormProjectSave(project)) {
-					f.ShowDialog(this);
-				}
+				this.selectedProject = (Project) this.listViewProjects.SelectedItems[0].Tag;
+				this.Close();
 			}
 		}
 
 		//_____________________________________________________________________
-		private void buttonDelete_Click(object sender, EventArgs e) {
-			if(this.listViewProjects.SelectedItems.Count==1) {
-			}
+		private void buttonCancel_Click(object sender, EventArgs e) {
+			this.Close();
+		}
+
+		//_____________________________________________________________________
+		private void FormProjectSelect_FormClosed(object sender, FormClosedEventArgs e) {
+			Shared.CurrentProject = this.selectedProject;
+			Shared.MainForm.LoadProject();
+			Shared.MainForm.Enabled = true;
 		}
 
 	}
