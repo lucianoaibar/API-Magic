@@ -5,7 +5,7 @@ API Magic is a Chromium based web browser for frontend to backend call redirecti
 
 ## Download
 
-Latest version 0.901: [Download for Windows 64-bit](/lucianoaibar/API-Magic/releases/latest)
+Latest version 0.901: [Download for Windows 64-bit](https://github.com/lucianoaibar/API-Magic/releases/latest)
 
 ## Use case
 
