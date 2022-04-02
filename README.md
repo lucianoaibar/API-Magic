@@ -3,12 +3,16 @@
 API Magic is a Chromium based web browser for frontend to backend call redirection.
 
 
+## Download
+
+Latest version 0.901: [Download for Windows 64-bit](/lucianoaibar/API-Magic/releases/latest)
+
 ## Use case
 
 Imagine that you made changes to an API microservice and want to test it from the frontend.\
 So you would need to do the following:
-1) to deploy locally the rest of the microservices
-2) also the frontend
+1. to deploy locally the rest of the microservices
+2. also the frontend
 
 Unfortunately this is not always an option.\
 For several reasons (i.e. not allowed to clone the required repositories).\
