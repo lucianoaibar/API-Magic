@@ -59,7 +59,7 @@ namespace APIMagic.Chromium {
 								using(RestClient restClient = new RestClient()) {
 									try {
 										RestRequest restRequest = new RestRequest(
-											(route.Address.EndsWith("?") && route.Output.EndsWith("?")) ? (route.Output + request.Url.Substring(1 + request.Url.IndexOf('?'))) : route.Output,
+											(route.AddressType==ProjectRouteAddressType.StartsWith && route.Output.EndsWith("?")) ? (route.Output.Substring(0, route.Output.Length-1) + urlRoute.Substring(route.Address.Length)) : route.Output,
 											RestSharpHttpMethod.FromString(route.Method)
 										) {
 											Timeout = 10000

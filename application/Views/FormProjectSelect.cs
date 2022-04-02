@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using APIMagic.Models;
+using APIMagic.DTO;
 using APIMagic.DAL;
 
 
@@ -15,13 +11,12 @@ namespace APIMagic.Views {
 	public partial class FormProjectSelect : Form {
 
 		//_____________________________________________________________________
-		private Project		selectedProject;
+		private string		selectedProjectName;
 
 		//_____________________________________________________________________
 		public FormProjectSelect() {
 			Shared.MainForm.Enabled = false;
-			this.selectedProject = null;
-
+			this.selectedProjectName = null;
 			InitializeComponent();
 		}
 
@@ -32,19 +27,20 @@ namespace APIMagic.Views {
 
 		//_____________________________________________________________________
 		private async Task LoadAll() {
-			ListViewItem	lvi;
 
-			IEnumerable<Project> projects;
-			projects = await ProjectRepository.GetAll();
+			ListViewItem			lvi;
+			IEnumerable<ProjectDTO>	projects;
+
+			projects = await ProjectRepository.GetAllAsDTO();
 
 			this.listViewProjects.BeginUpdate();
 			this.listViewProjects.Items.Clear();
-			foreach(Project project in projects) {
+			foreach(ProjectDTO project in projects) {
 				lvi = new ListViewItem(project.Name) {
-					Tag = project
+					Tag = project.Name
 				};
-				lvi.SubItems.Add(project.Settings.URL);
-				lvi.SubItems.Add(project.Settings.ApiURL);
+				lvi.SubItems.Add(project.URL);
+				lvi.SubItems.Add(project.ApiURL);
 				this.listViewProjects.Items.Add(lvi);
 			}
 			this.listViewProjects.EndUpdate();
@@ -63,7 +59,7 @@ namespace APIMagic.Views {
 		//_____________________________________________________________________
 		private void OpenSelectedProject() {
 			if(this.listViewProjects.SelectedItems.Count==1) {
-				this.selectedProject = (Project) this.listViewProjects.SelectedItems[0].Tag;
+				this.selectedProjectName = (string) this.listViewProjects.SelectedItems[0].Tag;
 				this.Close();
 			}
 		}
@@ -75,9 +71,10 @@ namespace APIMagic.Views {
 
 		//_____________________________________________________________________
 		private void FormProjectSelect_FormClosed(object sender, FormClosedEventArgs e) {
-			Shared.CurrentProject = this.selectedProject;
-			Shared.MainForm.LoadProject();
 			Shared.MainForm.Enabled = true;
+			if(this.selectedProjectName != null) {
+				Shared.LoadProject(this.selectedProjectName);
+			}
 		}
 
 	}

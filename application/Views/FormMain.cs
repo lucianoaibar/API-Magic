@@ -51,6 +51,9 @@ namespace APIMagic.Views {
 		}
 
 		private void Menu_OpenProject_Click(object sender, EventArgs e) {
+			using(FormProjectSelect f = new FormProjectSelect()) {
+				f.ShowDialog(this);
+			}
 		}
 
 		private void Menu_ManageProjects_Click(object sender, EventArgs e) {

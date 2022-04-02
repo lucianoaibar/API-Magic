@@ -107,6 +107,7 @@
     <Compile Include="DAL\ProjectRepository.cs" />
     <Compile Include="Constants\ProjectRouteAddressType.cs" />
     <Compile Include="Constants\ProjectRouteOutputType.cs" />
+    <Compile Include="DTO\ProjectDTO.cs" />
     <Compile Include="Models\IProjectRoute.cs" />
     <Compile Include="Models\ProjectRouteFromFile.cs" />
     <Compile Include="Models\ProjectRouteFromText.cs" />
