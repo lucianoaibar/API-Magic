@@ -1,7 +1,7 @@
 # API Magic
 
 API Magic is a Chromium based web browser for frontend to backend call redirection.\
-A 64-bit Windows version with .NET Framework 4.7.2 or better is required to run.
+Requires Windows 64-bit with .NET Framework 4.7.2 or better.
 
 ## Download
 
