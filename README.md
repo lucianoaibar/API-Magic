@@ -1,7 +1,7 @@
 # API Magic
 
-API Magic is a Chromium based web browser for frontend to backend call redirection.
-
+API Magic is a Chromium based web browser for frontend to backend call redirection.\
+A 64-bit Windows version with .NET Framework 4.7.2 or better is required to run.
 
 ## Download
 
@@ -19,7 +19,6 @@ For several reasons (i.e. not allowed to clone the required repositories).\
 But... what if we could reuse an already deployed frontend in another environment like "testing", "integration" or "pre-prod" ?
 
 With API Magic is possible to catch a backend call and redirect it to another destination.
-
 
 ## Projects organization
 
@@ -39,7 +38,6 @@ Inside each sub-folder, at least 4 files are required:
 * routes_file.json
 * routes_text.json
 * routes_url.json
-
 
 ## Example
 
