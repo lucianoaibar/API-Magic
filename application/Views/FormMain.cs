@@ -44,8 +44,7 @@ namespace APIMagic.Views {
 		//_____________________________________________________________________
 		public void LoadProject() {
 			if(Shared.CurrentProject!=null) {
-				_ = CefSharp.Cef.ClearCrossOriginWhitelist();
-				_ = CefSharp.Cef.AddCrossOriginWhitelistEntry("http://localhost:8080", "https", string.Empty, true);
+				Chromium.WebBrowser.SetCORS();
 				chromiumWebBrowser.LoadUrl(Shared.CurrentProject.Settings.URL);
 			}
 		}

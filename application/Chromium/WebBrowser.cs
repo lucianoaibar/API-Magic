@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.IO;
 using CefSharp;
 using CefSharp.WinForms;
@@ -30,11 +29,7 @@ namespace APIMagic.Chromium {
 			};
 
 			settings.CefCommandLineArgs.Add("disable-web-security", "true");
-			//settings.CefCommandLineArgs.Add("disable-features", "BlockInsecurePrivateNetworkRequests");
 			settings.CefCommandLineArgs.Add("disable-features", "OutOfBlinkCors");
-			
-			//Cef.AddCrossOriginWhitelistEntry("*", "*", "*", true);
-
 
 			Cef.EnableHighDPISupport();
 			Cef.Initialize(
@@ -62,6 +57,26 @@ namespace APIMagic.Chromium {
 				((ChromiumWebBrowser) sender).LoadingStateChanged -= ChromiumWebBrowser_LoadingStateChanged;
 				Shared.MainForm.Invoke((Action)((ChromiumWebBrowser) sender).Tag);
 			}
+		}
+
+		//_____________________________________________________________________
+		public static void SetCORS() {
+
+			int		currentPosition = 0;
+			int		count = 0;
+			string	cleanURL = Shared.CurrentProject.Settings.URL;
+
+			while((currentPosition = Shared.CurrentProject.Settings.URL.IndexOf('/', currentPosition)) != -1) {
+				count++;
+				if(count == 3) {
+					cleanURL = Shared.CurrentProject.Settings.URL.Substring(0, currentPosition);
+					break;
+				}
+				currentPosition++;
+			}
+			_ = CefSharp.Cef.ClearCrossOriginWhitelist();
+			_ = CefSharp.Cef.AddCrossOriginWhitelistEntry(cleanURL, "http", string.Empty, true);
+			_ = CefSharp.Cef.AddCrossOriginWhitelistEntry(cleanURL, "https", string.Empty, true);
 		}
 
 		//_____________________________________________________________________
