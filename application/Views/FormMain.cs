@@ -20,6 +20,7 @@ namespace APIMagic.Views {
 		//_____________________________________________________________________
 		public FormMain() {
 			InitializeComponent();
+			this.Text = "API Magic " + Program.APP_VERSION;
 			this.Icon = Properties.Resources.wine_48x48_32x32_16x16;
 
 			this.chromiumWebBrowser = Chromium.WebBrowser.CreateChromiumWebBrowser(this.toolStripContainerMain.ContentPanel.Controls, () => {

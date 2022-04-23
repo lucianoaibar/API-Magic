@@ -69,33 +69,33 @@
 			// Menu_OpenProject
 			// 
 			this.Menu_OpenProject.Name = "Menu_OpenProject";
-			this.Menu_OpenProject.Size = new System.Drawing.Size(180, 22);
+			this.Menu_OpenProject.Size = new System.Drawing.Size(171, 22);
 			this.Menu_OpenProject.Text = "Open Project...";
 			this.Menu_OpenProject.Click += new System.EventHandler(this.Menu_OpenProject_Click);
 			// 
 			// Menu_ManageProjects
 			// 
 			this.Menu_ManageProjects.Name = "Menu_ManageProjects";
-			this.Menu_ManageProjects.Size = new System.Drawing.Size(180, 22);
+			this.Menu_ManageProjects.Size = new System.Drawing.Size(171, 22);
 			this.Menu_ManageProjects.Text = "Manage Projects...";
 			this.Menu_ManageProjects.Click += new System.EventHandler(this.Menu_ManageProjects_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
 			// 
 			// Menu_ProjectsReload
 			// 
 			this.Menu_ProjectsReload.Name = "Menu_ProjectsReload";
-			this.Menu_ProjectsReload.Size = new System.Drawing.Size(180, 22);
+			this.Menu_ProjectsReload.Size = new System.Drawing.Size(171, 22);
 			this.Menu_ProjectsReload.Text = "Reload";
 			this.Menu_ProjectsReload.Click += new System.EventHandler(this.Menu_ProjectsReload_Click);
 			// 
 			// Menu_Quit
 			// 
 			this.Menu_Quit.Name = "Menu_Quit";
-			this.Menu_Quit.Size = new System.Drawing.Size(180, 22);
+			this.Menu_Quit.Size = new System.Drawing.Size(171, 22);
 			this.Menu_Quit.Text = "Quit";
 			this.Menu_Quit.Click += new System.EventHandler(this.Menu_Quit_Click);
 			// 
@@ -185,7 +185,6 @@
 			this.MainMenuStrip = this.menuStripMain;
 			this.Name = "FormMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "API Magic";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.menuStripMain.ResumeLayout(false);
 			this.menuStripMain.PerformLayout();
